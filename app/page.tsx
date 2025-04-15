@@ -191,7 +191,7 @@ export default function GamingShop() {
                   <DiamondIcon size="large" className="w-full h-full" />
                 </div>
                 <span className="relative group">
-                  ĐẠI LÝ KIM CƯƠNG XX TẬP KÍCH MOBILE
+                  ĐẠI LÝ KIM CƯƠNG x TẬP KÍCH MOBILE
                   <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white transform scale-x-0 origin-left transition-transform group-hover:scale-x-100 duration-300"></span>
                 </span>
               </h1>
