@@ -138,7 +138,7 @@ export default function GamingShop() {
                   />
                   <SocialLink
                     icon="facebook"
-                    text="Facebook: ĐẠI LÝ KIM CƯƠNG"
+                    text="Facebook: Đại Lý Kim Cương"
                     href="https://www.facebook.com/profile.php?id=61574000453529"
                   />
                   <SocialLink
@@ -148,7 +148,12 @@ export default function GamingShop() {
                   />
                   <SocialLink
                     icon="facebook"
-                    text="Facebook: Shop Kim Cương"
+                    text="Facebook: Quốc Kiều"
+                    href="https://www.facebook.com/profile.php?id=100071779683851"
+                  />
+                  <SocialLink
+                    icon="facebook"
+                    text="Facebook: Đại Lý Kim Cương"
                     href="https://www.facebook.com/profile.php?id=61574000453529"
                   />
                   <SocialLink
@@ -160,6 +165,11 @@ export default function GamingShop() {
                     icon="facebook"
                     text="Facebook: Lợi Nguyễn"
                     href="https://www.facebook.com/nguyen.thang.loi.544566/"
+                  />
+                  <SocialLink
+                    icon="facebook"
+                    text="Facebook: Đại Lý Kim Cương"
+                    href="https://www.facebook.com/profile.php?id=61574000453529"
                   />
                 </div>
               </div>
@@ -185,7 +195,7 @@ export default function GamingShop() {
                   <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white transform scale-x-0 origin-left transition-transform group-hover:scale-x-100 duration-300"></span>
                 </span>
               </h1>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+
               {/* Promo Text */}
               <div className="bg-orange-500/80 text-white text-sm sm:text-base px-4 py-2 rounded-full font-bold animate-pulse relative overflow-hidden backdrop-blur-sm text-center">
                 <span className="relative z-10">
@@ -228,7 +238,7 @@ export default function GamingShop() {
                 delay: 300,
               },
               {
-                name: "Thẻ đổi tên 198KC",
+                name: "Thẻ đổi tên",
                 price: "15k",
                 diamonds: 198,
                 color: "from-teal-600/80 to-teal-400/80",
@@ -236,7 +246,7 @@ export default function GamingShop() {
                 delay: 400,
               },
               {
-                name: "LÉ BAO ĐÁ PHOENIX 300",
+                name: "LÉ BAO ĐÁ PHOENIX",
                 price: "20K",
                 diamonds: 300,
                 color: "from-orange-600/80 to-orange-400/80",
@@ -244,7 +254,7 @@ export default function GamingShop() {
                 delay: 500,
               },
               {
-                name: "SÚNG DEMON 2680",
+                name: "Súng Demon Các Loại",
                 price: "159K",
                 diamonds: 2680,
                 color: "from-purple-600/80 to-purple-400/80",
@@ -252,7 +262,7 @@ export default function GamingShop() {
                 delay: 600,
               },
               {
-                name: "COMBO HS, LƯU ĐẠN 1000",
+                name: "COMBO HS, LƯU ĐẠN FLASH",
                 price: "60K",
                 diamonds: 1000,
                 color: "from-red-600/80 to-red-400/80",
@@ -260,7 +270,7 @@ export default function GamingShop() {
                 delay: 700,
               },
               {
-                name: "LỄ BAO ĐÁ DRAGON 2368",
+                name: "LỄ BAO ĐÁ DRAGON 20 Mảnh",
                 price: "149K",
                 diamonds: 2368,
                 color: "from-pink-600/80 to-pink-400/80",
@@ -316,7 +326,7 @@ export default function GamingShop() {
               />
 
               <PremiumProductCard
-                name="Hồn Thạch 4980 KC"
+                name="Hồn Thạch 4980 KC = 6 Hồn Thạch (Nếu đã có súng)"
                 price="349.999K"
                 diamonds={4980}
                 color="from-blue-800/80 to-blue-600/80"
@@ -369,7 +379,7 @@ export default function GamingShop() {
               </div>
               {[
                 {
-                  name: "Thẻ đổi tên 198KC",
+                  name: "Thẻ đổi tên",
                   image_url: "/images/rename.png",
                   description:
                     "Thẻ đổi tên khác với xưng danh siêu cấp vip pro",
@@ -381,7 +391,7 @@ export default function GamingShop() {
                   delay: 400,
                 },
                 {
-                  name: "RABBIT GUN 690 KC",
+                  name: "RABBIT GUN",
                   image_url: "/images/rabbitgun.png",
                   description:
                     "Vũ 6hí chiến thuật chính xác cao với tầm nhìn và sát thương tăng cường",
@@ -393,12 +403,12 @@ export default function GamingShop() {
                   delay: 400,
                 },
                 {
-                  name: "Súng 2000 KC",
+                  name: "AK Platinum...",
                   description:
                     "Súng trường tấn công quân sự với băng đạn mở rộng",
                   image_url: "/images/akplatinuim.png",
                   price: "135K",
-                  diamonds: 650,
+                  diamonds: 2000,
                   theme: "purple",
                   badge: "MỚI",
                   icon: <Sword className="h-5 w-5" />,
@@ -406,7 +416,7 @@ export default function GamingShop() {
                 },
                 {
                   image_url: "/images/3q.png",
-                  name: "Vũ Khí 3Q / Hồn Thạch (Nếu đã có) ",
+                  name: "Vũ Khí 3Q /Tự quy đổi 6 Hồn Thạch Nếu đã có súng",
                   description:
                     "Vũ khí nhỏ gọn với tốc độ bắn và độ chính xác cao",
                   price: "350K",
@@ -470,7 +480,7 @@ export default function GamingShop() {
                   image_url: "/images/hs.png",
                 },
                 {
-                  name: "Luu Đạn Flash 1000 KC",
+                  name: "Lựu Đạn Vĩnh Viễn 1000 KC",
                   description:
                     "Gói tối ưu với vũ khí, skin và đặc quyền độc quyền",
                   price: "59.999K",
@@ -495,7 +505,7 @@ export default function GamingShop() {
                 },
                 {
                   image_url: "/images/leobaodragon.png",
-                  name: "Lễ Bao Da Dragon 2368 KC",
+                  name: "Lễ Bao Đá Dragon 2368 KC",
                   description:
                     "Giải phóng sức mạnh của rồng cổ đại với bộ sưu tập hiếm này",
                   price: "149K",
@@ -573,7 +583,7 @@ export default function GamingShop() {
                 {
                   name: "Combo Giáp 6",
                   description: "Bộ giáp mạnh vcl chỉ thua giáp 8",
-                  price: "18.999K",
+                  price: "17.999K",
                   diamonds: 250,
                   theme: "blue",
                   badge: "ĐỘC QUYỀN",
