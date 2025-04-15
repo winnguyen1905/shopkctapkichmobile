@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+:root {
+  --background: 0 0% 3.9%;
+  --foreground: 0 0% 98%;
+  --card: 0 0% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --popover: 0 0% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 195 83.8% 60.8%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 0 0% 14.9%;
+  --muted-foreground: 0 0% 63.9%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 240 4.9% 83.9%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes thunder {
+  0%,
+  100% {
+    opacity: 0;
+    height: 0;
+  }
+  5%,
+  30% {
+    opacity: 0.8;
+    height: 20px;
+  }
+  6%,
+  29% {
+    opacity: 0;
+  }
+  7%,
+  28% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+    height: 0;
+  }
+}
+
+@keyframes thunder-small {
+  0%,
+  100% {
+    opacity: 0;
+    height: 0;
+  }
+  5%,
+  30% {
+    opacity: 0.6;
+    height: 10px;
+  }
+  6%,
+  29% {
+    opacity: 0;
+  }
+  7%,
+  28% {
+    opacity: 0.8;
+  }
+  40% {
+    opacity: 0;
+    height: 0;
+  }
+}
+
+@keyframes flash {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.animate-thunder {
+  animation: thunder 4s infinite;
+}
+
+.animate-thunder-small {
+  animation: thunder-small 3s infinite;
+}
+
+.animate-flash {
+  animation: flash 0.2s ease-out;
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+.marquee-container {
+  width: 100%;
+}
+
+.animation-delay-50 {
+  animation-delay: 50ms;
+}
+
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animation-delay-150 {
+  animation-delay: 150ms;
+}
+
+.animation-delay-250 {
+  animation-delay: 250ms;
+}
