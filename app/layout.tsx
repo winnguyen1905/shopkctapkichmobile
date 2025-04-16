@@ -6,8 +6,8 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "SHOP KIM CƯƠNG TẬP KÍCH MOBILE",
-  description: "Professional gaming shop for in-game items and weapons",
+  title: "Shop Kim Cương Tập Kích Mobile",
+  description: "Cửa hàng bán các vật phẩm kim cương trong game tập kích mobile",
     generator: 'v0.dev'
 }
 

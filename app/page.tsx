@@ -374,7 +374,7 @@ export default function GamingShop() {
                       : "opacity-0 translate-y-10"
                   }`}
                 >
-                  Vũ Khí Nổi Bật
+                  Sản phẩm vĩnh viễn bán chạy
                 </h2>
               </div>
               {[
@@ -390,18 +390,7 @@ export default function GamingShop() {
                   icon: <Target className="h-5 w-5" />,
                   delay: 400,
                 },
-                {
-                  name: "RABBIT GUN",
-                  image_url: "/images/rabbitgun.png",
-                  description:
-                    "Vũ 6hí chiến thuật chính xác cao với tầm nhìn và sát thương tăng cường",
-                  price: "45K",
-                  diamonds: 690,
-                  theme: "blue",
-                  badge: "BÁN CHẠY",
-                  icon: <Target className="h-5 w-5" />,
-                  delay: 400,
-                },
+
                 {
                   name: "AK Platinum...",
                   description:
@@ -421,6 +410,83 @@ export default function GamingShop() {
                     "Vũ khí nhỏ gọn với tốc độ bắn và độ chính xác cao",
                   price: "350K",
                   diamonds: 4980,
+                  theme: "cyan",
+                  icon: <Zap className="h-5 w-5" />,
+                  delay: 600,
+                },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className={`transition-all duration-700 ${
+                    isLoaded
+                      ? "opacity-100 transform-none"
+                      : "opacity-0 translate-y-10"
+                  }`}
+                  style={{ transitionDelay: `${item.delay}ms` }}
+                >
+                  <CreativeProductCard
+                    id={`weapon-${index}`}
+                    name={item.name}
+                    description={item.description}
+                    price={item.price}
+                    diamonds={item.diamonds}
+                    imagePath={item.image_url}
+                    theme={item.theme as any}
+                    badge={item.badge}
+                    icon={item.icon}
+                    onPurchase={handlePurchase}
+                    isPurchased={
+                      purchaseEffect.id === `weapon-${index}` &&
+                      purchaseEffect.active
+                    }
+                  />
+                </div>
+              ))}
+
+              <div className="col-span-full">
+                <h2
+                  className={`text-xl font-bold mb-4 border-b border-gray-700 pb-2 transition-all duration-700 delay-300 ${
+                    isLoaded
+                      ? "opacity-100 transform-none"
+                      : "opacity-0 translate-y-10"
+                  }`}
+                >
+                  Sản phẩm Thời Hạn bán chạy
+                </h2>
+              </div>
+              {[
+                
+                {
+                  name: "Combo Giáp 6 (1 Tháng)",
+                  description: "Bộ giáp mạnh vcl chỉ thua giáp 8",
+                  price: "65K",
+                  diamonds: 1000,
+                  theme: "blue",
+                  badge: "ĐỘC QUYỀN",
+                  icon: <Star className="h-5 w-5" />,
+                  image_url: "/images/amor.png",
+                  delay: 1300,
+                },
+
+                {
+                  name: "Băng Đạn 6 tháng",
+                  description:
+                    "Súng trường tấn công quân sự với băng đạn mở rộng",
+                  image_url: "/images/bangdan.png",
+                  price: "30K",
+                  diamonds: 312,
+                  theme: "purple",
+                  badge: "MỚI",
+                  icon: <Sword className="h-5 w-5" />,
+                  delay: 500,
+                },
+                {
+                  image_url: "/images/demonssv.png",
+                  name: "Lễ Bao Demon",
+                  description:
+                    "Vũ khí nhỏ gọn với tốc độ bắn và độ chính xác cao",
+                  price: "45K",
+                  diamonds: 600,
                   theme: "cyan",
                   icon: <Zap className="h-5 w-5" />,
                   delay: 600,
@@ -505,7 +571,7 @@ export default function GamingShop() {
                 },
                 {
                   image_url: "/images/leobaodragon.png",
-                  name: "Lễ Bao Đá Dragon 2368 KC",
+                  name: "Lễ Bao Đá Dragon Các Loại 2368 KC",
                   description:
                     "Giải phóng sức mạnh của rồng cổ đại với bộ sưu tập hiếm này",
                   price: "149K",
@@ -566,7 +632,7 @@ export default function GamingShop() {
                   badge: "HUYỀN THOẠI",
                   icon: <Zap className="h-5 w-5" />,
                   delay: 1200,
-                  image_url: "/images/lebaodemon.png",
+                  image_url: "/images/demonssv.png",
                 },
                 {
                   name: "Nhân vật hiếm",
@@ -581,15 +647,16 @@ export default function GamingShop() {
                   delay: 1300,
                 },
                 {
-                  name: "Combo Giáp 6",
-                  description: "Bộ giáp mạnh vcl chỉ thua giáp 8",
-                  price: "17.999K",
-                  diamonds: 250,
+                  name: "RABBIT GUN",
+                  image_url: "/images/rabbitgun.png",
+                  description:
+                    "Vũ 6hí chiến thuật chính xác cao với tầm nhìn và sát thương tăng cường",
+                  price: "45K",
+                  diamonds: 690,
                   theme: "blue",
-                  badge: "ĐỘC QUYỀN",
-                  icon: <Star className="h-5 w-5" />,
-                  image_url: "/images/amor.png",
-                  delay: 1300,
+                  badge: "BÁN CHẠY",
+                  icon: <Target className="h-5 w-5" />,
+                  delay: 400,
                 },
                 {
                   name: "Y Tá Quỷ (Zombie) 180 Ngày",
