@@ -199,7 +199,7 @@ export default function GamingShop() {
               {/* Promo Text */}
               <div className="bg-orange-500/80 text-white text-sm sm:text-base px-4 py-2 rounded-full font-bold animate-pulse relative overflow-hidden backdrop-blur-sm text-center">
                 <span className="relative z-10">
-                  Giá Siêu Rẻ Cho Cả 5 Server !!!
+                  Giá Siêu Rẻ Cho MB1, MN1, MN2 !!!
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/0 via-yellow-500/30 to-yellow-500/0 animate-[shimmer_2s_infinite]"></div>
               </div>
@@ -481,7 +481,7 @@ export default function GamingShop() {
                   delay: 500,
                 },
                 {
-                  image_url: "/images/demonssv.png",
+                  image_url: "/images/lebaodemonss.png",
                   name: "Lễ Bao Demon",
                   description:
                     "Vũ khí nhỏ gọn với tốc độ bắn và độ chính xác cao",
