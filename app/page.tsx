@@ -1,9 +1,9 @@
-"use client";
+"use client"
 
-import type React from "react";
+import type React from "react"
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
+import { useEffect, useState } from "react"
+import Image from "next/image"
 import {
   ShoppingCart,
   Flame,
@@ -15,11 +15,12 @@ import {
   Sword,
   Check,
   Facebook,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import Link from "next/link";
+  MessageCircle,
+} from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import Link from "next/link"
 
 // Random image categories for game items
 const imageCategories = [
@@ -35,55 +36,45 @@ const imageCategories = [
   "grenade",
   "scope",
   "ammo",
-];
+]
 
 // Random colors for variety
-const randomColors = [
-  "red",
-  "blue",
-  "green",
-  "purple",
-  "orange",
-  "cyan",
-  "pink",
-  "yellow",
-];
+const randomColors = ["red", "blue", "green", "purple", "orange", "cyan", "pink", "yellow"]
 
 export default function GamingShop() {
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false)
   const [purchaseEffect, setPurchaseEffect] = useState<{
-    id: string;
-    active: boolean;
-  }>({ id: "", active: false });
+    id: string
+    active: boolean
+  }>({ id: "", active: false })
 
   useEffect(() => {
     // Simulate loading delay
     const timer = setTimeout(() => {
-      setIsLoaded(true);
-    }, 500);
+      setIsLoaded(true)
+    }, 500)
 
-    return () => clearTimeout(timer);
-  }, []);
+    return () => clearTimeout(timer)
+  }, [])
 
   // Function to handle purchase animation
   const handlePurchase = (id: string) => {
-    setPurchaseEffect({ id, active: true });
+    setPurchaseEffect({ id, active: true })
     setTimeout(() => {
-      setPurchaseEffect({ id: "", active: false });
-    }, 2000);
-  };
+      setPurchaseEffect({ id: "", active: false })
+    }, 2000)
+  }
 
   // Generate random image URL for game items
   const getRandomImage = (itemType: string) => {
-    const category =
-      imageCategories[Math.floor(Math.random() * imageCategories.length)];
-    const color = randomColors[Math.floor(Math.random() * randomColors.length)];
-    const size = 150 + Math.floor(Math.random() * 50);
+    const category = imageCategories[Math.floor(Math.random() * imageCategories.length)]
+    const color = randomColors[Math.floor(Math.random() * randomColors.length)]
+    const size = 150 + Math.floor(Math.random() * 50)
 
     // Create a unique but deterministic image for each item type
-    const seed = itemType.length + category.length;
-    return `/placeholder.svg?height=${size}&width=${size}&text=${category}_${color}_${seed}`;
-  };
+    const seed = itemType.length + category.length
+    return `/placeholder.svg?height=${size}&width=${size}&text=${category}_${color}_${seed}`
+  }
 
   return (
     <div className="min-h-screen relative bg-zinc-900 text-white overflow-hidden">
@@ -110,9 +101,7 @@ export default function GamingShop() {
           <div className="relative w-16 h-16 mb-4">
             <DiamondIcon size="large" className="w-full h-full" />
           </div>
-          <div className="text-xl font-bold text-cyan-400">
-            Đại lý kim cương giá rẻ bèo
-          </div>
+          <div className="text-xl font-bold text-cyan-400">Đại lý kim cương giá rẻ bèo</div>
           <div className="mt-2 text-sm text-gray-400">Đang tải...</div>
         </div>
       </div>
@@ -141,11 +130,7 @@ export default function GamingShop() {
                     text="Facebook: Đại Lý Kim Cương"
                     href="https://www.facebook.com/profile.php?id=61574000453529"
                   />
-                  <SocialLink
-                    icon="zalo"
-                    text="Zalo: 0931331363"
-                    href="https://zalo.me/0931331363"
-                  />
+                  <SocialLink icon="zalo" text="Zalo: 0931331363" href="https://zalo.me/0931331363" />
                   <SocialLink
                     icon="facebook"
                     text="Facebook: Quốc Kiều"
@@ -156,11 +141,7 @@ export default function GamingShop() {
                     text="Facebook: Đại Lý Kim Cương"
                     href="https://www.facebook.com/profile.php?id=61574000453529"
                   />
-                  <SocialLink
-                    icon="zalo"
-                    text="Zalo: 0931331363"
-                    href="https://zalo.me/0931331363"
-                  />
+                  <SocialLink icon="zalo" text="Zalo: 0931331363" href="https://zalo.me/0931331363" />
                   <SocialLink
                     icon="facebook"
                     text="Facebook: Lợi Nguyễn"
@@ -179,9 +160,7 @@ export default function GamingShop() {
           {/* Main Header */}
           <div
             className={`bg-gradient-to-r from-cyan-500/80 to-blue-500/80 p-4 rounded-b-xl shadow-lg transition-all duration-1000 backdrop-blur-sm ${
-              isLoaded
-                ? "opacity-100 transform-none"
-                : "opacity-0 -translate-y-10"
+              isLoaded ? "opacity-100 transform-none" : "opacity-0 -translate-y-10"
             }`}
           >
             <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -198,9 +177,7 @@ export default function GamingShop() {
 
               {/* Promo Text */}
               <div className="bg-orange-500/80 text-white text-sm sm:text-base px-4 py-2 rounded-full font-bold animate-pulse relative overflow-hidden backdrop-blur-sm text-center">
-                <span className="relative z-10">
-                  Giá Siêu Rẻ Cho MB1, MN1, MN2 !!!
-                </span>
+                <span className="relative z-10">Giá Siêu Rẻ Cho MB1, MN1, MN2 !!!</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/0 via-yellow-500/30 to-yellow-500/0 animate-[shimmer_2s_infinite]"></div>
               </div>
             </div>
@@ -212,9 +189,7 @@ export default function GamingShop() {
           <div className="lg:col-span-1 space-y-3">
             <h2
               className={`text-xl font-bold mb-4 border-b border-gray-700 pb-2 transition-all duration-700 delay-100 ${
-                isLoaded
-                  ? "opacity-100 transform-none"
-                  : "opacity-0 -translate-x-10"
+                isLoaded ? "opacity-100 transform-none" : "opacity-0 -translate-x-10"
               }`}
             >
               Sản Phẩm Nổi Bật
@@ -281,9 +256,7 @@ export default function GamingShop() {
               <div
                 key={index}
                 className={`transition-all duration-700 ${
-                  isLoaded
-                    ? "opacity-100 transform-none"
-                    : "opacity-0 -translate-x-10"
+                  isLoaded ? "opacity-100 transform-none" : "opacity-0 -translate-x-10"
                 }`}
                 style={{ transitionDelay: `${item.delay}ms` }}
               >
@@ -294,19 +267,14 @@ export default function GamingShop() {
                   color={item.color}
                   icon={item.icon}
                   onClick={() => handlePurchase(`list-${index}`)}
-                  isPurchased={
-                    purchaseEffect.id === `list-${index}` &&
-                    purchaseEffect.active
-                  }
+                  isPurchased={purchaseEffect.id === `list-${index}` && purchaseEffect.active}
                 />
               </div>
             ))}
 
             <div
               className={`space-y-3 transition-all duration-700 delay-900 ${
-                isLoaded
-                  ? "opacity-100 transform-none"
-                  : "opacity-0 -translate-x-10"
+                isLoaded ? "opacity-100 transform-none" : "opacity-0 -translate-x-10"
               }`}
             >
               <h3 className="text-lg font-bold text-cyan-400 flex items-center gap-2 mb-2">
@@ -369,9 +337,7 @@ export default function GamingShop() {
               <div className="col-span-full">
                 <h2
                   className={`text-xl font-bold mb-4 border-b border-gray-700 pb-2 transition-all duration-700 delay-300 ${
-                    isLoaded
-                      ? "opacity-100 transform-none"
-                      : "opacity-0 translate-y-10"
+                    isLoaded ? "opacity-100 transform-none" : "opacity-0 translate-y-10"
                   }`}
                 >
                   Sản phẩm vĩnh viễn bán chạy
@@ -381,8 +347,7 @@ export default function GamingShop() {
                 {
                   name: "Thẻ đổi tên",
                   image_url: "/images/rename.png",
-                  description:
-                    "Thẻ đổi tên khác với xưng danh siêu cấp vip pro",
+                  description: "Thẻ đổi tên khác với xưng danh siêu cấp vip pro",
                   price: "14,999K",
                   diamonds: 198,
                   theme: "orange",
@@ -393,8 +358,7 @@ export default function GamingShop() {
 
                 {
                   name: "AK Platinum...",
-                  description:
-                    "Súng trường tấn công quân sự với băng đạn mở rộng",
+                  description: "Súng trường tấn công quân sự với băng đạn mở rộng",
                   image_url: "/images/akplatinuim.png",
                   price: "135K",
                   diamonds: 2000,
@@ -406,8 +370,7 @@ export default function GamingShop() {
                 {
                   image_url: "/images/3q.png",
                   name: "Vũ Khí 3Q /Tự quy đổi 6 Hồn Thạch Nếu đã có súng",
-                  description:
-                    "Vũ khí nhỏ gọn với tốc độ bắn và độ chính xác cao",
+                  description: "Vũ khí nhỏ gọn với tốc độ bắn và độ chính xác cao",
                   price: "350K",
                   diamonds: 4980,
                   theme: "cyan",
@@ -418,9 +381,7 @@ export default function GamingShop() {
                 <div
                   key={index}
                   className={`transition-all duration-700 ${
-                    isLoaded
-                      ? "opacity-100 transform-none"
-                      : "opacity-0 translate-y-10"
+                    isLoaded ? "opacity-100 transform-none" : "opacity-0 translate-y-10"
                   }`}
                   style={{ transitionDelay: `${item.delay}ms` }}
                 >
@@ -435,10 +396,7 @@ export default function GamingShop() {
                     badge={item.badge}
                     icon={item.icon}
                     onPurchase={handlePurchase}
-                    isPurchased={
-                      purchaseEffect.id === `weapon-${index}` &&
-                      purchaseEffect.active
-                    }
+                    isPurchased={purchaseEffect.id === `weapon-${index}` && purchaseEffect.active}
                   />
                 </div>
               ))}
@@ -446,20 +404,17 @@ export default function GamingShop() {
               <div className="col-span-full">
                 <h2
                   className={`text-xl font-bold mb-4 border-b border-gray-700 pb-2 transition-all duration-700 delay-300 ${
-                    isLoaded
-                      ? "opacity-100 transform-none"
-                      : "opacity-0 translate-y-10"
+                    isLoaded ? "opacity-100 transform-none" : "opacity-0 translate-y-10"
                   }`}
                 >
                   Sản phẩm Thời Hạn bán chạy
                 </h2>
               </div>
               {[
-                
                 {
                   name: "Combo Giáp 6 (1 Tháng)",
                   description: "Bộ giáp mạnh vcl chỉ thua giáp 8",
-                  price: "65K",
+                  price: "65.999K",
                   diamonds: 1000,
                   theme: "blue",
                   badge: "ĐỘC QUYỀN",
@@ -470,10 +425,9 @@ export default function GamingShop() {
 
                 {
                   name: "Băng Đạn 6 tháng",
-                  description:
-                    "Súng trường tấn công quân sự với băng đạn mở rộng",
+                  description: "Súng trường tấn công quân sự với băng đạn mở rộng",
                   image_url: "/images/bangdan.png",
-                  price: "30K",
+                  price: "45K",
                   diamonds: 312,
                   theme: "purple",
                   badge: "MỚI",
@@ -483,9 +437,8 @@ export default function GamingShop() {
                 {
                   image_url: "/images/lebaodemonss.png",
                   name: "Lễ Bao Demon",
-                  description:
-                    "Vũ khí nhỏ gọn với tốc độ bắn và độ chính xác cao",
-                  price: "45K",
+                  description: "Vũ khí nhỏ gọn với tốc độ bắn và độ chính xác cao",
+                  price: "45.999K",
                   diamonds: 600,
                   theme: "cyan",
                   icon: <Zap className="h-5 w-5" />,
@@ -495,9 +448,7 @@ export default function GamingShop() {
                 <div
                   key={index}
                   className={`transition-all duration-700 ${
-                    isLoaded
-                      ? "opacity-100 transform-none"
-                      : "opacity-0 translate-y-10"
+                    isLoaded ? "opacity-100 transform-none" : "opacity-0 translate-y-10"
                   }`}
                   style={{ transitionDelay: `${item.delay}ms` }}
                 >
@@ -512,10 +463,7 @@ export default function GamingShop() {
                     badge={item.badge}
                     icon={item.icon}
                     onPurchase={handlePurchase}
-                    isPurchased={
-                      purchaseEffect.id === `weapon-${index}` &&
-                      purchaseEffect.active
-                    }
+                    isPurchased={purchaseEffect.id === `weapon-${index}` && purchaseEffect.active}
                   />
                 </div>
               ))}
@@ -523,9 +471,7 @@ export default function GamingShop() {
               <div className="col-span-full">
                 <h2
                   className={`text-xl font-bold mb-4 border-b border-gray-700 pb-2 transition-all duration-700 delay-700 ${
-                    isLoaded
-                      ? "opacity-100 transform-none"
-                      : "opacity-0 translate-y-10"
+                    isLoaded ? "opacity-100 transform-none" : "opacity-0 translate-y-10"
                   }`}
                 >
                   Hộp Đặc Biệt
@@ -535,9 +481,8 @@ export default function GamingShop() {
               {[
                 {
                   name: "Combo Học Sinh",
-                  description:
-                    "Gói tối ưu với vũ khí, skin và đặc quyền độc quyền",
-                  price: "60K",
+                  description: "Gói tối ưu với vũ khí, skin và đặc quyền độc quyền",
+                  price: "64.999K",
                   diamonds: 1000,
                   theme: "green",
                   badge: "COMBO",
@@ -547,9 +492,8 @@ export default function GamingShop() {
                 },
                 {
                   name: "Lựu Đạn Vĩnh Viễn 1000 KC",
-                  description:
-                    "Gói tối ưu với vũ khí, skin và đặc quyền độc quyền",
-                  price: "59.999K",
+                  description: "Gói tối ưu với vũ khí, skin và đặc quyền độc quyền",
+                  price: "64.999",
                   diamonds: 1000,
                   theme: "green",
                   badge: "COMBO",
@@ -560,9 +504,8 @@ export default function GamingShop() {
                 {
                   image_url: "/images/phoenix.png",
                   name: "Lễ Bao đá Phoenix 300KC",
-                  description:
-                    "Hồi sinh từ tro tàn với trang bị huyền thoại dựa trên lửa",
-                  price: "20K",
+                  description: "Hồi sinh từ tro tàn với trang bị huyền thoại dựa trên lửa",
+                  price: "19.999K",
                   diamonds: 300,
                   theme: "orange",
                   badge: "HOT",
@@ -572,8 +515,7 @@ export default function GamingShop() {
                 {
                   image_url: "/images/leobaodragon.png",
                   name: "Lễ Bao Đá Dragon Các Loại 2368 KC",
-                  description:
-                    "Giải phóng sức mạnh của rồng cổ đại với bộ sưu tập hiếm này",
+                  description: "Giải phóng sức mạnh của rồng cổ đại với bộ sưu tập hiếm này",
                   price: "149K",
                   diamonds: 2368,
                   theme: "red",
@@ -585,9 +527,7 @@ export default function GamingShop() {
                 <div
                   key={index}
                   className={`transition-all duration-700 ${
-                    isLoaded
-                      ? "opacity-100 transform-none"
-                      : "opacity-0 translate-y-10"
+                    isLoaded ? "opacity-100 transform-none" : "opacity-0 translate-y-10"
                   }`}
                   style={{ transitionDelay: `${item.delay}ms` }}
                 >
@@ -602,10 +542,7 @@ export default function GamingShop() {
                     badge={item.badge}
                     icon={item.icon}
                     onPurchase={handlePurchase}
-                    isPurchased={
-                      purchaseEffect.id === `box-${index}` &&
-                      purchaseEffect.active
-                    }
+                    isPurchased={purchaseEffect.id === `box-${index}` && purchaseEffect.active}
                   />
                 </div>
               ))}
@@ -613,9 +550,7 @@ export default function GamingShop() {
               <div className="col-span-full">
                 <h2
                   className={`text-xl font-bold mb-4 border-b border-gray-700 pb-2 transition-all duration-700 delay-1000 ${
-                    isLoaded
-                      ? "opacity-100 transform-none"
-                      : "opacity-0 translate-y-10"
+                    isLoaded ? "opacity-100 transform-none" : "opacity-0 translate-y-10"
                   }`}
                 >
                   Ưu Đãi Giới Hạn
@@ -624,8 +559,7 @@ export default function GamingShop() {
               {[
                 {
                   name: "Súng Demon 2680 KC",
-                  description:
-                    "Lưỡi kiếm địa ngục được rèn trong vực thẳm của địa ngục",
+                  description: "Lưỡi kiếm địa ngục được rèn trong vực thẳm của địa ngục",
                   price: "159K",
                   diamonds: 2680,
                   theme: "purple",
@@ -636,8 +570,7 @@ export default function GamingShop() {
                 },
                 {
                   name: "Nhân vật hiếm",
-                  description:
-                    "Skin nhân vật phiên bản giới hạn với hoạt ảnh tùy chỉnh",
+                  description: "Skin nhân vật phiên bản giới hạn với hoạt ảnh tùy chỉnh",
                   price: "45K",
                   diamonds: 608,
                   theme: "pink",
@@ -649,8 +582,7 @@ export default function GamingShop() {
                 {
                   name: "RABBIT GUN",
                   image_url: "/images/rabbitgun.png",
-                  description:
-                    "Vũ 6hí chiến thuật chính xác cao với tầm nhìn và sát thương tăng cường",
+                  description: "Vũ 6hí chiến thuật chính xác cao với tầm nhìn và sát thương tăng cường",
                   price: "45K",
                   diamonds: 690,
                   theme: "blue",
@@ -684,9 +616,7 @@ export default function GamingShop() {
                 <div
                   key={index}
                   className={`transition-all duration-700 ${
-                    isLoaded
-                      ? "opacity-100 transform-none"
-                      : "opacity-0 translate-y-10"
+                    isLoaded ? "opacity-100 transform-none" : "opacity-0 translate-y-10"
                   }`}
                   style={{ transitionDelay: `${item.delay}ms` }}
                 >
@@ -701,19 +631,29 @@ export default function GamingShop() {
                     badge={item.badge}
                     icon={item.icon}
                     onPurchase={handlePurchase}
-                    isPurchased={
-                      purchaseEffect.id === `special-${index}` &&
-                      purchaseEffect.active
-                    }
+                    isPurchased={purchaseEffect.id === `special-${index}` && purchaseEffect.active}
                   />
                 </div>
               ))}
             </div>
           </div>
         </div>
+        {/* Floating Message Button */}
+        <Link
+          href="https://www.facebook.com/profile.php?id=61574000453529"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg z-50 transition-all duration-300 hover:scale-110 flex items-center justify-center"
+          aria-label="Message us on Facebook"
+        >
+          <MessageCircle className="h-6 w-6" />
+          <span className="absolute -top-10 right-0 bg-black/80 text-white text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Chat với chúng tôi
+          </span>
+        </Link>
       </div>
     </div>
-  );
+  )
 }
 
 // Diamond icon with thunder flash effect
@@ -721,26 +661,29 @@ function DiamondIcon({
   size = "medium",
   className = "",
 }: {
-  size?: "small" | "medium" | "large";
-  className?: string;
+  size?: "small" | "medium" | "large"
+  className?: string
 }) {
-  const [flashActive, setFlashActive] = useState(false);
+  const [flashActive, setFlashActive] = useState(false)
 
   useEffect(() => {
     // Create random flash effect
-    const flashInterval = setInterval(() => {
-      setFlashActive(true);
-      setTimeout(() => setFlashActive(false), 150);
-    }, Math.random() * 3000 + 2000); // Random interval between 2-5 seconds
+    const flashInterval = setInterval(
+      () => {
+        setFlashActive(true)
+        setTimeout(() => setFlashActive(false), 150)
+      },
+      Math.random() * 3000 + 2000,
+    ) // Random interval between 2-5 seconds
 
-    return () => clearInterval(flashInterval);
-  }, []);
+    return () => clearInterval(flashInterval)
+  }, [])
 
   const sizeClasses = {
     small: "w-4 h-4",
     medium: "w-6 h-6",
     large: "w-10 h-10",
-  };
+  }
 
   return (
     <div className={`relative ${className}`}>
@@ -758,11 +701,7 @@ function DiamondIcon({
       </div>
 
       {/* Thunder flash effect */}
-      <div
-        className={`absolute inset-0 bg-cyan-300 opacity-0 ${
-          flashActive ? "animate-flash" : ""
-        }`}
-      ></div>
+      <div className={`absolute inset-0 bg-cyan-300 opacity-0 ${flashActive ? "animate-flash" : ""}`}></div>
 
       {/* Lightning bolts */}
       <div className="absolute inset-0">
@@ -775,22 +714,25 @@ function DiamondIcon({
         )}
       </div>
     </div>
-  );
+  )
 }
 
 // Small diamond icon with thunder effect for product items
 function DiamondIconSmall({ diamonds }: { diamonds: number }) {
-  const [flashActive, setFlashActive] = useState(false);
+  const [flashActive, setFlashActive] = useState(false)
 
   useEffect(() => {
     // Create random flash effect
-    const flashInterval = setInterval(() => {
-      setFlashActive(true);
-      setTimeout(() => setFlashActive(false), 150);
-    }, Math.random() * 4000 + 3000); // Random interval between 3-7 seconds
+    const flashInterval = setInterval(
+      () => {
+        setFlashActive(true)
+        setTimeout(() => setFlashActive(false), 150)
+      },
+      Math.random() * 4000 + 3000,
+    ) // Random interval between 3-7 seconds
 
-    return () => clearInterval(flashInterval);
-  }, []);
+    return () => clearInterval(flashInterval)
+  }, [])
 
   return (
     <div className="inline-flex items-center">
@@ -801,9 +743,7 @@ function DiamondIconSmall({ diamonds }: { diamonds: number }) {
             alt="Diamond"
             width={16}
             height={16}
-            className={`transition-all duration-100 ${
-              flashActive ? "brightness-200" : "brightness-100"
-            }`}
+            className={`transition-all duration-100 ${flashActive ? "brightness-200" : "brightness-100"}`}
           />
         </div>
 
@@ -818,7 +758,7 @@ function DiamondIconSmall({ diamonds }: { diamonds: number }) {
       </div>
       <span>{diamonds}</span>
     </div>
-  );
+  )
 }
 
 function SocialLink({
@@ -826,9 +766,9 @@ function SocialLink({
   text,
   href,
 }: {
-  icon: "facebook" | "zalo";
-  text: string;
-  href: string;
+  icon: "facebook" | "zalo"
+  text: string
+  href: string
 }) {
   return (
     <Link
@@ -851,7 +791,7 @@ function SocialLink({
       )}
       <span className="text-sm">{text}</span>
     </Link>
-  );
+  )
 }
 
 function ProductItem({
@@ -863,13 +803,13 @@ function ProductItem({
   onClick,
   isPurchased,
 }: {
-  name: string;
-  price: string;
-  diamonds: number;
-  color: string;
-  icon?: React.ReactNode;
-  onClick?: () => void;
-  isPurchased?: boolean;
+  name: string
+  price: string
+  diamonds: number
+  color: string
+  icon?: React.ReactNode
+  onClick?: () => void
+  isPurchased?: boolean
 }) {
   return (
     <div
@@ -896,7 +836,7 @@ function ProductItem({
       </div>
       <div className="font-bold">{price}</div>
     </div>
-  );
+  )
 }
 
 function CreativeProductCard({
@@ -912,20 +852,20 @@ function CreativeProductCard({
   onPurchase,
   isPurchased,
 }: {
-  id: string;
-  name: string;
-  description: string;
-  price: string;
-  diamonds: number;
-  imagePath: string;
-  theme?: "blue" | "purple" | "cyan" | "orange" | "red" | "green" | "pink";
-  badge?: string;
-  icon?: React.ReactNode;
-  onPurchase?: (id: string) => void;
-  isPurchased?: boolean;
+  id: string
+  name: string
+  description: string
+  price: string
+  diamonds: number
+  imagePath: string
+  theme?: "blue" | "purple" | "cyan" | "orange" | "red" | "green" | "pink"
+  badge?: string
+  icon?: React.ReactNode
+  onPurchase?: (id: string) => void
+  isPurchased?: boolean
 }) {
-  const [isHovered, setIsHovered] = useState(false);
-  const [imageLoaded, setImageLoaded] = useState(false);
+  const [isHovered, setIsHovered] = useState(false)
+  const [imageLoaded, setImageLoaded] = useState(false)
 
   const themeStyles = {
     blue: {
@@ -977,9 +917,9 @@ function CreativeProductCard({
       border: "border-pink-600/80",
       textColor: "text-pink-400",
     },
-  };
+  }
 
-  const style = themeStyles[theme];
+  const style = themeStyles[theme]
 
   return (
     <Card
@@ -1030,11 +970,7 @@ function CreativeProductCard({
         )}
       </div>
       <div className="p-4 flex flex-col items-center relative">
-        <div
-          className={`relative w-full h-32 mb-3 transition-transform duration-500 ${
-            isHovered ? "scale-110" : ""
-          }`}
-        >
+        <div className={`relative w-full h-32 mb-3 transition-transform duration-500 ${isHovered ? "scale-110" : ""}`}>
           {!imageLoaded && (
             <div className="absolute inset-0 flex items-center justify-center bg-gray-800/50">
               <div className="w-8 h-8 border-4 border-t-transparent border-cyan-400 rounded-full animate-spin"></div>
@@ -1044,9 +980,7 @@ function CreativeProductCard({
             src={imagePath || "/placeholder.svg"}
             alt={name}
             fill
-            className={`object-contain transition-opacity duration-500 ${
-              imageLoaded ? "opacity-100" : "opacity-0"
-            }`}
+            className={`object-contain transition-opacity duration-500 ${imageLoaded ? "opacity-100" : "opacity-0"}`}
             onLoad={() => setImageLoaded(true)}
           />
           {/* Remove or comment out the gradient overlay div */}
@@ -1073,15 +1007,13 @@ function CreativeProductCard({
           <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:animate-shimmer"></div>
 
           <ShoppingCart
-            className={`h-4 w-4 mr-2 transition-transform duration-300 ${
-              isHovered ? "animate-bounce" : ""
-            }`}
+            className={`h-4 w-4 mr-2 transition-transform duration-300 ${isHovered ? "animate-bounce" : ""}`}
           />
           <span className="relative z-10">Mua Ngay</span>
         </Button>
       </div>
     </Card>
-  );
+  )
 }
 
 function PremiumProductCard({
@@ -1092,14 +1024,14 @@ function PremiumProductCard({
   icon,
   badge,
 }: {
-  name: string;
-  price: string;
-  diamonds: number;
-  color: string;
-  icon?: React.ReactNode;
-  badge?: string;
+  name: string
+  price: string
+  diamonds: number
+  color: string
+  icon?: React.ReactNode
+  badge?: string
 }) {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState(false)
 
   return (
     <div
@@ -1173,5 +1105,5 @@ function PremiumProductCard({
         )}
       </div>
     </div>
-  );
+  )
 }
