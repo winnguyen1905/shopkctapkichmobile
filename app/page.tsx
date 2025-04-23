@@ -286,7 +286,7 @@ export default function GamingShop() {
 
               <PremiumProductCard
                 name="SÚNG 3Q, Súng 4980 Các Loại"
-                price="349.999K"
+                price="435.999K"
                 diamonds={4980}
                 color="from-blue-800/80 to-blue-600/80"
                 icon={<Target className="h-4 w-4" />}
