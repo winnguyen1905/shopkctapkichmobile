@@ -134,7 +134,7 @@ export default function GamingShop() {
                   <SocialLink
                     icon="facebook"
                     text="Facebook: Quốc Kiều"
-                    href="https://www.facebook.com/profile.php?id=100071779683901"
+                    href="https://www.facebook.com/profile.php?id=100071779684351"
                   />
                   <SocialLink
                     icon="facebook"
@@ -295,7 +295,7 @@ export default function GamingShop() {
 
               <PremiumProductCard
                 name="Hồn Thạch 4980 KC = 6 Hồn Thạch (Nếu đã có súng)"
-                price="390K"
+                price="435K"
                 diamonds={4980}
                 color="from-blue-800/80 to-blue-600/80"
                 icon={<Target className="h-4 w-4" />}
@@ -304,7 +304,7 @@ export default function GamingShop() {
 
               <PremiumProductCard
                 name="SÚNG 5000 KC"
-                price="390k"
+                price="435k"
                 diamonds={5000}
                 color="from-purple-800/80 to-purple-600/80"
                 icon={<Sword className="h-4 w-4" />}
@@ -371,7 +371,7 @@ export default function GamingShop() {
                   image_url: "/images/3q.png",
                   name: "Vũ Khí 3Q /Tự quy đổi 6 Hồn Thạch Nếu đã có súng",
                   description: "Vũ khí nhỏ gọn với tốc độ bắn và độ chính xác cao",
-                  price: "390k",
+                  price: "435k",
                   diamonds: 4980,
                   theme: "cyan",
                   icon: <Zap className="h-5 w-5" />,
